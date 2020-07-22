@@ -1,11 +1,11 @@
-# BOLT
-Detection Of Budding Viruses
+# MED-SCAN
+Detection Of Budding Viruses in human body
 
 CODE :
 
-import pyttsx3                             ////////  IMPORTING    
-import speech_recognition as sr                                        MODULES
-import os                                                                                  //////////////
+import pyttsx3                             ////////  IMPORTING          MODULES           //////////////
+import speech_recognition as sr                                        
+import os                                                                               
 import smtplib
 import cv2
 import pytesseract
