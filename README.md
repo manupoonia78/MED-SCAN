@@ -1,29 +1,37 @@
 # MED-SCAN
 Detection Of Budding Viruses in human body
 
-CODE :
 
-import pyttsx3                             ////////  IMPORTING  MODULES  /////////
+import pyttsx3                            
+
 import speech_recognition as sr                                        
+
 import os                                                                               
+
 import smtplib
+
 import cv2
+
 import pytesseract
+
 import matplotlib.pyplot as plt
 from PIL import Image
 
 engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[0].id)             /////   SELECTING VOICE /////////
 
+voices = engine.getProperty('voices')
+
+engine.setProperty('voice', voices[0].id)          
 
 def speak(audio):
+
     engine.say(audio)
     engine.runAndWait()
      
 
 def takeCommand():
-    r = sr.Recognizer()
+   
+  	r = sr.Recognizer()
     with sr.Microphone() as source:                     /////////   TAKING VOICE INPUT   //////////////
         print("Listening...")
         r.pause_threshold = 1                                        //////////    MINIMUM AUDIO PITCH   /////////
@@ -40,10 +48,15 @@ def takeCommand():
         return None
     return query
 c=0
+
 pytesseract.pytesseract.tesseract_cmd="C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe"    //////  SETTING THE TESSERECT MODULE PATH  ///////
+
 directory = "Report_images"
+
 search=takeCommand()
+
 for filename in os.listdir(directory):
+    
     if filename.endswith(".png"): 
         image = cv2.imread((os.path.join(directory, filename)))
         image_copy = image.copy()
