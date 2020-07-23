@@ -3,7 +3,7 @@ Detection Of Budding Viruses in human body
 
 CODE :
 
-import pyttsx3                             ////////  IMPORTING          MODULES           //////////////
+import pyttsx3                             ////////  IMPORTING  MODULES  /////////
 import speech_recognition as sr                                        
 import os                                                                               
 import smtplib
